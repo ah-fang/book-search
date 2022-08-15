@@ -1,4 +1,5 @@
 // TODO: Update the auth middleware function to work with the GraphQL API.
+// Matched 21.6. What else does this file need?
 const jwt = require('jsonwebtoken');
 
 // set token secret and expiration date
@@ -8,7 +9,7 @@ const expiration = '2h';
 module.exports = {
   // function for our authenticated routes
   authMiddleware: function (req, res, next) {
-    // allows token to be sent via  req.query or headers
+    // allows token to be sent via req.query or headers
     let token = req.query.token || req.headers.authorization;
 
     // ["Bearer", "<tokenvalue>"]
